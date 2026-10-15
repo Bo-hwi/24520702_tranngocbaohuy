@@ -240,3 +240,21 @@ nav a {
 .error-state {
   display: none;
 }
+
+/* M4: The live-data card is already available; do not animate a perpetual loading placeholder.
+   Keep the skeleton markup for Exercise 4 and future real loading states. */
+.loading-state {
+  display: none;
+}
+
+/* Ensure interactive links and buttons retain a visible keyboard focus ring. */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+/* Dark mode uses a light accent for links but a dark accent for white-text skip links. */
+[data-theme="dark"] .skip-link {
+  background-color: var(--action-bg);
+}

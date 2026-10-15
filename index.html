@@ -67,14 +67,24 @@
     <!-- 2. Skills Matrix (Categorized Badges) -->
     <section id="skills">
       <h2>Skills Matrix</h2>
-      <div class="skills-grid">
-        <span class="badge">HTML5</span>
-        <span class="badge">CSS3</span>
-        <span class="badge">JavaScript</span>
-        <span class="badge">TypeScript</span>
-      </div>
+      <menu class="skills-grid" style="list-style: none; padding: 0;">
+        <li><span class="badge">HTML5</span></li>
+        <li><span class="badge">JavaScript</span></li>
+        <li><span class="badge">TypeScript</span></li>
+      </menu>
     </section>
     
+    <!-- 3. Phần Bộ trống Drum Kit (Đã làm sạch div theo luật Contract-First) -->
+    <section id="drum-kit" aria-label="Virtual Drum Kit">
+      <h2>Interactive Drum Kit</h2>
+      <menu class="drum-container" style="list-style: none; padding: 0;">
+        <li><button class="drum-pad" data-key="a" data-sound="assets/sounds/clap.wav">A (Clap)</button></li>
+        <li><button class="drum-pad" data-key="s" data-sound="assets/sounds/hihat.wav">S (Hi-Hat)</button></li>
+        <li><button class="drum-pad" data-key="d" data-sound="assets/sounds/kick.wav">D (Kick)</button></li>
+        <li><button class="drum-pad" data-key="f" data-sound="assets/sounds/snare.wav">F (Snare)</button></li>
+      </menu>
+    </section>
+
     <!-- 3. Project Cards (Cấu trúc mẫu từ đề bài) -->
     <section id="projects">
       <h2>My Projects</h2>

@@ -35,3 +35,75 @@ updateCountdown();
 
 // Đăng ký vòng lặp chạy đều đặn sau mỗi 1000 mili-giây (1 giây)
 const countdownInterval = setInterval(updateCountdown, 1000);
+// ============================================================================
+// SLICE 2 & 3: QUẢN LÝ TRẠNG THÁI FORM STATE-MACHINE & PHÒNG VỆ DOUBLE-SUBMIT / XSS
+// ============================================================================
+
+const formElement = document.getElementById('registration-form');
+const submitBtn = document.getElementById('submit-btn');
+const inputEmail = document.getElementById('user-email');
+
+// Khai báo các thẻ thông báo trạng thái
+const msgSubmitting = document.querySelector('.msg-submitting');
+const msgSuccess = document.querySelector('.msg-success');
+const msgError = document.querySelector('.msg-error');
+
+/**
+ * Hàm cập nhật trạng thái State-Machine của Form và điều khiển UI tương ứng
+ * Trạng thái bắt buộc: 'idle' | 'submitting' | 'success' | 'error'
+ */
+function setFormState(state) {
+  // Cập nhật thuộc tính trạng thái lên giao kèo HTML
+  formElement.setAttribute('data-state', state);
+
+  // Ẩn toàn bộ các dòng thông báo trước khi chuyển trạng thái mới
+  msgSubmitting.style.display = 'none';
+  msgSuccess.style.display = 'none';
+  msgError.style.display = 'none';
+
+  if (state === 'submitting') {
+    msgSubmitting.style.display = 'block';
+    submitBtn.disabled = true; // SLICE 3: Chống Double-Submit (vô hiệu hóa nút ngay lập tức)
+  } else if (state === 'success') {
+    msgSuccess.style.display = 'block';
+    submitBtn.disabled = false;
+    formElement.reset(); // Làm sạch trường nhập liệu sau khi đăng ký thành công
+  } else if (state === 'error') {
+    msgError.style.display = 'block';
+    submitBtn.disabled = false;
+  } else if (state === 'idle') {
+    submitBtn.disabled = false;
+  }
+}
+
+// Lắng nghe sự kiện người dùng nhấn Submit Form
+formElement.addEventListener('submit', (event) => {
+  event.preventDefault(); // Chặn hành vi tải lại trang mặc định của trình duyệt
+
+  // SLICE 3: Bảo mật Input Sanitization - Khử độc dữ liệu đầu vào chặn đứng XSS
+  // Sử dụng phương thức thay thế các ký tự đặc biệt nguy hiểm thành mã an toàn
+  const cleanEmail = inputEmail.value.trim().replace(/[&<>"']/g, function(match) {
+    return { 
+      '&': '&amp;', 
+      '<': '&lt;', 
+      '>': '&gt;', 
+      '"': '&quot;', 
+      "'": '&#x27;' 
+    }[match];
+  });
+
+  // Chuyển Form sang trạng thái đang xử lý dữ liệu
+  setFormState('submitting');
+
+  // Mô phỏng kết nối API gửi lên máy chủ với tỷ lệ lỗi ngẫu nhiên để chứng minh tính bền bỉ
+  setTimeout(() => {
+    // Tạo giả lập: 70% thành công, 30% gặp lỗi mạng kết nối mạng
+    const isNetworkSuccess = Math.random() > 0.3;
+
+    if (isNetworkSuccess) {
+      setFormState('success');
+    } else {
+      setFormState('error');
+    }
+  }, 1500); // Trì hoãn xử lý trong 1.5 giây để nhìn thấy rõ trạng thái Loading
+});

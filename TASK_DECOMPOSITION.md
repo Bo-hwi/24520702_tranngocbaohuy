@@ -1,5 +1,5 @@
 - [ ] HOMEWORK 3: Resilient Landing Page (3 Slices)
   - [x] SLICE 1: Drift-Free Countdown Engine (UTC ISO 8601 timestamps)
-  - [ ] SLICE 2: State-Machine Form (Idle -> Submitting -> Success/Error)
-  - [ ] SLICE 3: Double-submit prevention & input sanitization (zero XSS)
+  - [x] SLICE 2: State-Machine Form (Idle -> Submitting -> Success/Error)
+  - [x] SLICE 3: Double-submit prevention & input sanitization (zero XSS)
   - [ ] AI FAILURE REPORT: Document 3 AI-induced defects caught during review

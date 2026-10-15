@@ -84,7 +84,35 @@
         <li><button class="drum-pad" data-key="f" data-sound="assets/sounds/snare.wav">F (Snare)</button></li>
       </menu>
     </section>
+    
+      <!-- BÀI 3: PHÂN ĐOẠN RESILIENT LANDING PAGE (KHÔNG DÙNG THẺ DIV) -->
+    <section id="landing-page" aria-label="Resilient Event Registration">
+      <h2>Special Event Registration</h2>
+      
+      <!-- Bộ hiển thị thời gian đếm ngược sử dụng thẻ văn bản và thẻ time ngữ nghĩa -->
+      <p class="countdown-container">
+        Sự kiện kết thúc sau: 
+        <time id="countdown-display">00 ngày 00:00:00</time>
+      </p>
 
+      <!-- Khởi tạo Form đăng ký có trạng thái ban đầu là "idle" phục vụ State-Machine -->
+      <form id="registration-form" data-state="idle">
+        <p>Đăng ký nhận tài liệu Web Architecture & AI Engineering độc quyền!</p>
+        
+        <!-- Nhãn đi liền input kết nối bằng ID tối ưu cho trình đọc màn hình A11y -->
+        <label for="user-email">Email trường học (Institutional Email):</label>
+        <input type="email" id="user-email" required placeholder="username@uit.edu.vn">
+        
+        <button type="submit" id="submit-btn">Đăng ký ngay</button>
+        
+        <!-- Các phần tử phản hồi trạng thái động (Sẽ được điều khiển ẩn/hiện dựa theo data-state bằng CSS hoặc JS) -->
+        <p class="msg-submitting" style="display: none;">🔄 Hệ thống đang gửi dữ liệu, vui lòng đợi...</p>
+        <p class="msg-success" style="display: none;">🎉 Đăng ký thành công! Link tài liệu đã gửi về hòm thư.</p>
+        <p class="msg-error" style="display: none;">❌ Lỗi kết nối mạng. Vui lòng nhấn thử lại.</p>
+      </form>
+    </section>
+
+    
     <!-- 3. Project Cards (Cấu trúc mẫu từ đề bài) -->
     <section id="projects">
       <h2>My Projects</h2>

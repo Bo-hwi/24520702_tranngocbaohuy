@@ -1,5 +1,5 @@
-- [x] HOMEWORK 2: Drum Kit Engine (Contract-First)
-  - [x] Step 1: Commit HTML data-sound contract before touching JavaScript
-  - [x] Step 2: Implement polyphonic Audio playback engine independently
-  - [x] Step 3: Implement keydown listener with event.repeat throttling
-  - [x] Step 4: Implement FIFO Beat Recorder (timestamped event queue)
+- [ ] HOMEWORK 3: Resilient Landing Page (3 Slices)
+  - [ ] SLICE 1: Drift-Free Countdown Engine (UTC ISO 8601 timestamps)
+  - [ ] SLICE 2: State-Machine Form (Idle -> Submitting -> Success/Error)
+  - [ ] SLICE 3: Double-submit prevention & input sanitization (zero XSS)
+  - [ ] AI FAILURE REPORT: Document 3 AI-induced defects caught during review

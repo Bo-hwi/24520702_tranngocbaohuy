@@ -1,5 +1,5 @@
-- [ ] HOMEWORK 2: Drum Kit Engine (Contract-First)
-  - [ ] Step 1: Commit HTML data-sound contract before touching JavaScript
-  - [ ] Step 2: Implement polyphonic Audio playback engine independently
-  - [ ] Step 3: Implement keydown listener with event.repeat throttling
-  - [ ] Step 4: Implement FIFO Beat Recorder (timestamped event queue)
+- [x] HOMEWORK 2: Drum Kit Engine (Contract-First)
+  - [x] Step 1: Commit HTML data-sound contract before touching JavaScript
+  - [x] Step 2: Implement polyphonic Audio playback engine independently
+  - [x] Step 3: Implement keydown listener with event.repeat throttling
+  - [x] Step 4: Implement FIFO Beat Recorder (timestamped event queue)

@@ -2,4 +2,4 @@
   - [x] SLICE 1: Drift-Free Countdown Engine (UTC ISO 8601 timestamps)
   - [x] SLICE 2: State-Machine Form (Idle -> Submitting -> Success/Error)
   - [x] SLICE 3: Double-submit prevention & input sanitization (zero XSS)
-  - [ ] AI FAILURE REPORT: Document 3 AI-induced defects caught during review
+  - [x] AI FAILURE REPORT: Document 3 AI-induced defects caught during review

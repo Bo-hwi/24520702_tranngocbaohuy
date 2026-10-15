@@ -258,3 +258,10 @@ button:focus-visible {
 [data-theme="dark"] .skip-link {
   background-color: var(--action-bg);
 }
+/* Trạng thái hoạt động khi phím được gõ trúng (Active State) */
+.drum-pad.active {
+  transform: scale(0.95);
+  border-color: var(--accent-color);
+  background-color: var(--action-bg);
+  color: white;
+}

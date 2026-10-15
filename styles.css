@@ -4,13 +4,15 @@
   --text-primary: #111827;
   --accent-color: #2563eb;
   --nav-bg: #f3f4f6;
+  --action-bg: #2563eb;
 }
 
 [data-theme="dark"] {
   --bg-primary: #111827;
   --text-primary: #f9fafb;
-  --accent-color: #3b82f6;
+  --accent-color: #93c5fd;
   --nav-bg: #1f2937;
+  --action-bg: #1d4ed8;
 }
 
 * {
@@ -83,7 +85,7 @@ nav a {
 }
 
 .badge {
-  background-color: var(--accent-color);
+  background-color: var(--action-bg);
   color: white;
   padding: 5px 10px;
   border-radius: 4px;
@@ -147,11 +149,11 @@ nav a {
 }
 
 .badge-tech {
-  background-color: var(--accent-color);
+  background-color: var(--action-bg);
 }
 
 .badge-status {
-  background-color: #10b981; /* Màu xanh lá biểu thị trạng thái live */
+  background-color: #047857; /* Màu xanh lá biểu thị trạng thái live */
   color: white;
 }
 
@@ -177,7 +179,7 @@ nav a {
 .btn-retry {
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: var(--accent-color);
+  background-color: var(--action-bg);
   color: white;
   border: none;
   border-radius: 4px;
@@ -221,3 +223,14 @@ nav a {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-item {
+    animation: none;
+  }
+
+  body,
+  .skip-link,
+  .btn-retry {
+    transition: none;
+  }
+}

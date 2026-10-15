@@ -1,4 +1,5 @@
-- [x] EXERCISE 4: Resilient Component Architecture
-  - [x] SUB-TASK T-03A: Loading Skeleton (Pure CSS Shimmer gradient)
-  - [x] SUB-TASK T-03B: Live Data State (Flexbox metadata badges & Grid list)
-  - [ ] SUB-TASK T-03C: Empty & Error States with accessible retry trigger
+- [ ] HOMEWORK 3: Resilient Landing Page (3 Slices)
+  - [ ] SLICE 1: Drift-Free Countdown Engine (UTC ISO 8601 timestamps)
+  - [ ] SLICE 2: State-Machine Form (Idle -> Submitting -> Success/Error)
+  - [ ] SLICE 3: Double-submit prevention & input sanitization (zero XSS)
+  - [ ] AI FAILURE REPORT: Document 3 AI-induced defects caught during review

@@ -234,3 +234,9 @@ nav a {
     transition: none;
   }
 }
+
+/* Hide inactive project states */
+.empty-state,
+.error-state {
+  display: none;
+}

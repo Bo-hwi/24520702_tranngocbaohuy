@@ -65,6 +65,34 @@
           <div class="skeleton-item button-skeleton"></div>
         </article>
       </div>
+      
+      <!-- BÀI 3: PHÂN ĐOẠN RESILIENT LANDING PAGE (KHÔNG DÙNG THẺ DIV) -->
+      <section id="landing-page" aria-label="Resilient Event Registration">
+        <h2>Special Event Registration</h2>
+        
+        <!-- Bộ hiển thị thời gian đếm ngược sử dụng thẻ văn bản và thẻ time ngữ nghĩa -->
+        <p class="countdown-container">
+          Sự kiện kết thúc sau: 
+          <time id="countdown-display">00 ngày 00:00:00</time>
+        </p>
+
+        <!-- Khởi tạo Form đăng ký có trạng thái ban đầu là "idle" phục vụ State-Machine -->
+        <form id="registration-form" data-state="idle">
+          <p>Đăng ký nhận tài liệu Web Architecture & AI Engineering độc quyền!</p>
+          
+          <!-- Nhãn đi liền input kết nối bằng ID tối ưu cho trình đọc màn hình A11y -->
+          <label for="user-email">Email trường học (Institutional Email):</label>
+          <input type="email" id="user-email" required placeholder="username@uit.edu.vn">
+          
+          <button type="submit" id="submit-btn">Đăng ký ngay</button>
+          
+          <!-- Các phần tử phản hồi trạng thái động (Sẽ được điều khiển ẩn/hiện dựa theo data-state bằng CSS hoặc JS) -->
+          <p class="msg-submitting" style="display: none;">🔄 Hệ thống đang gửi dữ liệu, vui lòng đợi...</p>
+          <p class="msg-success" style="display: none;">🎉 Đăng ký thành công! Link tài liệu đã gửi về hòm thư.</p>
+          <p class="msg-error" style="display: none;">❌ Lỗi kết nối mạng. Vui lòng nhấn thử lại.</p>
+        </form>
+      </section>
+
 
       <!-- SUB-TASK T-03B: Live Data State (Mặc định hiển thị hoặc ẩn tùy ý, ở đây thiết lập class active) -->
       <div class="projects-container live-data-state">
@@ -91,12 +119,21 @@
         </div>
       </div>
 
+
       <!-- SUB-TASK T-03C: Error State (Hiển thị khi lỗi kết nối, kèm nút Retry tiếp cận tốt) -->
-      <div class="projects-container error-state" style="display: none;">
-        <div class="status-message" role="alert" aria-live="assertive">
-          <p>Failed to load projects due to a network connection error.</p>
-          <button id="retry-btn" class="btn-retry" aria-label="Retry loading projects">
-            🔄 Retry Loading
-          </button>
-        </div>
-      </div>
+        <!-- Trạng thái trống (Đã thay thế div bằng article và p chuẩn ngữ nghĩa) -->
+      <article class="projects-container empty-state" style="display: none;">
+        <p class="status-message" role="status">No projects available at the moment. Check back later!</p>
+      </article>
+
+      <!-- Trạng thái lỗi (Đã thay thế div bằng article và p chuẩn ngữ nghĩa) -->
+      <article class="projects-container error-state" style="display: none;">
+        <p class="status-message" role="alert" aria-live="assertive">Failed to load projects due to a network connection error.</p>
+        <button id="retry-btn" class="btn-retry" aria-label="Retry loading projects">🔄 Retry Loading</button>
+      </article>
+
+      <!-- ĐẶT TẤT CẢ THẺ SCRIPT XUỐNG DƯỚI CÙNG CỦA KHỐI NỘI DUNG CHÍNH -->
+      <script src="drum-kit.js"></script>
+      <script src="landing-page.js"></script>
+    </main>
+

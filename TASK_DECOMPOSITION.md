@@ -1,5 +1,5 @@
 - [ ] HOMEWORK 1: Production Portfolio
-  - [ ] M1: WCAG 2.2 AA Accessibility Audit
+  - [x] M1: WCAG 2.2 AA Accessibility Audit
   - [ ] M2: Keyboard & Focus Trap Audit
   - [ ] M3: Strict Content Security Policy
   - [ ] M4: Lighthouse Optimization
